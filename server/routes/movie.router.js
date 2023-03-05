@@ -30,7 +30,7 @@ router.get("/details/:id", (req, res) => {
 
 	pool.query(queryText, [req.params.id])
 		.then((result) => {
-			res.send(result.rows);
+			res.send(result.rows[0]); // sends object
 		})
 		.catch((error) => {
 			console.log(`Error GET ${queryText}`, error);
