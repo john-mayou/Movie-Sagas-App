@@ -1,4 +1,4 @@
-# React-Redux with Redux-Sagas
+<!-- # React-Redux with Redux-Sagas
 
 This week you have two separate parts to work on:
 
@@ -24,39 +24,39 @@ For this weekend challenge you'll be expanding on a movie management application
 2. `npm run server`
 3. `npm run client`
 
-## Notes
+## Notes -->
 
-### Table Relationships
+<!-- ### Table Relationships
 
 Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
 
-We've given you the database complete with a junction table and data for `movies_genres`.
-
+We've given you the database complete with a junction table and data for `movies_genres`. -->
+<!--
 ### Movie Poster Images
 
 We've added some movie posters in the `public/images` folder, and the database is set up to use them. If you want your own posters, you'll want to add the files there!
 
----
+--- -->
 
-## Feature List
+<!-- ## Feature List
 
-> NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
+> NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you. -->
 
-### Home / List Page
+<!-- ### Home / List Page -->
 
-This view is completed already! It displays all of the movies in the movie database.
+<!-- This view is completed already! It displays all of the movies in the movie database.
 
--   TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
+-   TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie. -->
 
-### Details Page
+<!-- ### Details Page -->
 
-This should show all details **including ALL genres** for the selected movie, including title, description, and the image, too! Use Sagas and Redux to handle these requests and data.
+<!-- This should show all details **including ALL genres** for the selected movie, including title, description, and the image, too! Use Sagas and Redux to handle these requests and data. -->
 
--   TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
+<!-- -   TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page -->
 
-> Base functionality does not require the movie details to load correctly after refresh of the browser.
-
-> Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
+<!-- > Base functionality does not require the movie details to load correctly after refresh of the browser. -->
+<!--
+> Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`? -->
 
 ---
 
