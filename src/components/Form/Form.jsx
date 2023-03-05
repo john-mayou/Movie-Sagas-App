@@ -1,10 +1,21 @@
 import "./Form.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 function Form() {
+	const dispatch = useDispatch();
+
+	// redux
+	const genres = useSelector((store) => store.genres);
+
+	// local
 	const [titleInput, setTitleInput] = useState("");
 	const [imageInput, setImageInput] = useState("");
 	const [descriptionInput, setDescriptionInput] = useState("");
+
+	useEffect(() => {
+		dispatch({ type: "FETCH_GENRES" });
+	}, []);
 
 	const handleFormSubmit = () => {
 		return;
@@ -12,7 +23,7 @@ function Form() {
 
 	return (
 		<div className="form-page__container">
-			<form onSubmit={handleFormSubmit}>
+			<form className="movie-form" onSubmit={handleFormSubmit}>
 				<input
 					type="text"
 					placeholder="Title"
@@ -31,7 +42,14 @@ function Form() {
 					value={descriptionInput}
 				></textarea>
 				<select>
-					<option>Select Genres</option>
+					<option value="">Select Genres</option>
+					{genres.map(({ id, name }) => {
+						return (
+							<option key={id} value={id}>
+								{name}
+							</option>
+						);
+					})}
 				</select>
 			</form>
 		</div>
