@@ -95,10 +95,10 @@ The Add Movie page should have the buttons:
 
 > Hint: You'll want to use the genres that are in the db for your dropdown
 
-### 2. Refresh on Details Page
+<!-- ### 2. Refresh on Details Page
 
 Allow the app to maintain on refresh our details page.
-Research [React Router URL PARAMS](https://reactrouter.com/web/example/url-params)
+Research [React Router URL PARAMS](https://reactrouter.com/web/example/url-params) -->
 
 ### 3. Edit Page (Stretch)
 
