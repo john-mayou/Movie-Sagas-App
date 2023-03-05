@@ -1,0 +1,22 @@
+.movie-form {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	& > * {
+		display: block;
+	}
+
+	&__checkbox-container {
+		padding: 1rem;
+
+		& input[type="checkbox"] {
+			margin: 0.8rem;
+		}
+	}
+
+	&__checkbox-title {
+		padding: 0 5px;
+	}
+}

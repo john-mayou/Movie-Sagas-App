@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 function Form() {
-	const dispatch = useDispatch();
-
 	// redux
+	const dispatch = useDispatch();
 	const genres = useSelector((store) => store.genres);
 
 	// local
@@ -14,14 +13,33 @@ function Form() {
 	const [descriptionInput, setDescriptionInput] = useState("");
 	const [genresInput, setGenresInput] = useState([]);
 
+	// on load
 	useEffect(() => {
 		dispatch({ type: "FETCH_GENRES" });
 	}, []);
+
+	/**
+	 * Grabs the value of the checkbox, removes or adds to local state
+	 * based on if it aleady exists or not
+	 * @param {event} event
+	 */
+	const handleAddGenre = (event) => {
+		const {
+			target: { value },
+		} = event; // deconstruct
+
+		setGenresInput(
+			genresInput.includes(value) // if already exists
+				? genresInput.filter((genre) => genre !== value) // yes -> remove
+				: [...genresInput, value] // no -> add
+		);
+	};
 
 	const handleFormSubmit = () => {
 		return;
 	};
 
+	console.log(genresInput);
 	return (
 		<div className="form-page__container">
 			<form className="movie-form" onSubmit={handleFormSubmit}>
@@ -42,16 +60,24 @@ function Form() {
 					onChange={(e) => setDescriptionInput(e.target.value)}
 					value={descriptionInput}
 				></textarea>
-				<select>
-					<option value="">Select Genres</option>
+				<fieldset className="movie-form__checkbox-container">
+					<legend className="movie-form__checkbox-title">
+						<strong>Pick Genres</strong>
+					</legend>
 					{genres.map(({ id, name }) => {
 						return (
-							<option key={id} value={id}>
-								{name}
-							</option>
+							<div key={id}>
+								<input
+									type="checkbox"
+									value={name}
+									id={`${id}-${name}`}
+									onChange={handleAddGenre}
+								/>
+								<label htmlFor={`${id}-${name}`}>{name}</label>
+							</div>
 						);
 					})}
-				</select>
+				</fieldset>
 			</form>
 		</div>
 	);
