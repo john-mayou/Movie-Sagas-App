@@ -85,10 +85,10 @@ As one of your last projects, it's possible you will be sharing this with employ
 -   a textarea (for the movie description)
 -   a dropdown (for the genres) -->
 
-The Add Movie page should have the buttons:
+<!-- The Add Movie page should have the buttons:
 
 -   `Cancel` button, which should bring the user to the Home/List Page
--   `Save` button, which should save these inputs in the database and bring the user to the Home/List Page (which now has the new movie)
+-   `Save` button, which should save these inputs in the database and bring the user to the Home/List Page (which now has the new movie) -->
 
 <!-- **Base functionality does not require being able to select more than one genre for a new movie** -->
 
