@@ -1,8 +1,11 @@
 import "./Form.scss";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function Form() {
+	const history = useHistory();
+
 	// redux
 	const dispatch = useDispatch();
 	const genres = useSelector((store) => store.genres);
@@ -35,6 +38,10 @@ function Form() {
 		);
 	};
 
+	/**
+	 * Takes local state of the current inputs and dispatches them to a POST saga
+	 * @param {event} e
+	 */
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
 
@@ -46,6 +53,8 @@ function Form() {
 		};
 
 		dispatch({ type: "ADD_MOVIE", payload: newMovie });
+
+		history.push("/");
 	};
 
 	return (
@@ -86,8 +95,9 @@ function Form() {
 						);
 					})}
 				</fieldset>
-				<button type="submit">Submit</button>
+				<button type="submit">Save</button>
 			</form>
+			<button onClick={() => history.push("/")}>Cancel</button>
 		</div>
 	);
 }
