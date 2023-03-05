@@ -75,25 +75,26 @@ As one of your last projects, it's possible you will be sharing this with employ
 
 ## Development Stretch Goals
 
-### 1. Add Movie Form
+<!--
+### 1. Add Movie Form -->
 
-This should show:
+<!-- This should show: -->
 
--   an input field (for the movie title)
+<!-- -   an input field (for the movie title)
 -   an input field (for the movie poster image URL)
 -   a textarea (for the movie description)
--   a dropdown (for the genres)
+-   a dropdown (for the genres) -->
 
 The Add Movie page should have the buttons:
 
 -   `Cancel` button, which should bring the user to the Home/List Page
 -   `Save` button, which should save these inputs in the database and bring the user to the Home/List Page (which now has the new movie)
 
-**Base functionality does not require being able to select more than one genre for a new movie**
+<!-- **Base functionality does not require being able to select more than one genre for a new movie** -->
 
-> Hint: Look at the /api/movie POST route -- it's been made already but is performing 2 queries: one to store the movie information and another to store the genre in the junction table.
+<!-- > Hint: Look at the /api/movie POST route -- it's been made already but is performing 2 queries: one to store the movie information and another to store the genre in the junction table.
 
-> Hint: You'll want to use the genres that are in the db for your dropdown
+> Hint: You'll want to use the genres that are in the db for your dropdown -->
 
 <!-- ### 2. Refresh on Details Page
 

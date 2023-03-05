@@ -11,7 +11,7 @@ function Form() {
 	const [titleInput, setTitleInput] = useState("");
 	const [imageInput, setImageInput] = useState("");
 	const [descriptionInput, setDescriptionInput] = useState("");
-	const [genresInput, setGenresInput] = useState([]);
+	const [genresInput, setGenresInput] = useState([]); // holds array of genre id's
 
 	// on load
 	useEffect(() => {
@@ -30,16 +30,24 @@ function Form() {
 
 		setGenresInput(
 			genresInput.includes(value) // if already exists
-				? genresInput.filter((genre) => genre !== value) // yes -> remove
-				: [...genresInput, value] // no -> add
+				? genresInput.filter((genre) => genre !== Number(value)) // yes -> remove
+				: [...genresInput, Number(value)] // no -> add
 		);
 	};
 
-	const handleFormSubmit = () => {
-		return;
+	const handleFormSubmit = (e) => {
+		e.preventDefault();
+
+		const newMovie = {
+			title: titleInput,
+			poster: imageInput,
+			description: descriptionInput,
+			genres: genresInput, // array of genre id's
+		};
+
+		dispatch({ type: "ADD_MOVIE", payload: newMovie });
 	};
 
-	console.log(genresInput);
 	return (
 		<div className="form-page__container">
 			<form className="movie-form" onSubmit={handleFormSubmit}>
@@ -69,7 +77,7 @@ function Form() {
 							<div key={id}>
 								<input
 									type="checkbox"
-									value={name}
+									value={id}
 									id={`${id}-${name}`}
 									onChange={handleAddGenre}
 								/>
@@ -78,6 +86,7 @@ function Form() {
 						);
 					})}
 				</fieldset>
+				<button type="submit">Submit</button>
 			</form>
 		</div>
 	);
