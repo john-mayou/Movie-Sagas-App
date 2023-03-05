@@ -12,6 +12,7 @@ function Form() {
 	const [titleInput, setTitleInput] = useState("");
 	const [imageInput, setImageInput] = useState("");
 	const [descriptionInput, setDescriptionInput] = useState("");
+	const [genresInput, setGenresInput] = useState([]);
 
 	useEffect(() => {
 		dispatch({ type: "FETCH_GENRES" });
