@@ -60,6 +60,7 @@ function Form() {
 	return (
 		<div className="form-page__container">
 			<form className="movie-form" onSubmit={handleFormSubmit}>
+				<h1 className="movie-form__title">Add Movie!</h1>
 				<input
 					type="text"
 					placeholder="Title"
@@ -76,6 +77,7 @@ function Form() {
 					placeholder="Description"
 					onChange={(e) => setDescriptionInput(e.target.value)}
 					value={descriptionInput}
+					rows="7"
 				></textarea>
 				<fieldset className="movie-form__checkbox-container">
 					<legend className="movie-form__checkbox-title">
@@ -95,9 +97,16 @@ function Form() {
 						);
 					})}
 				</fieldset>
-				<button type="submit">Save</button>
+				<button className="movie-form__submit" type="submit">
+					Save
+				</button>
+				<button
+					className="movie-form__cancel"
+					onClick={() => history.push("/")}
+				>
+					Cancel
+				</button>
 			</form>
-			<button onClick={() => history.push("/")}>Cancel</button>
 		</div>
 	);
 }

@@ -54,9 +54,9 @@ router.post("/", (req, res) => {
 
 			// Now handle the genre reference to joined table
 			const insertMovieGenreQuery = `
-      INSERT INTO "movies_genres" ("movie_id", "genre_id")
-      VALUES  ($1, 2);
-      `;
+				INSERT INTO "movies_genres" ("movie_id", "genre_id")
+				VALUES ($1, $2);
+				`;
 
 			// SECOND QUERY ADDS EVERY GENRE OF NEW MOVIE
 			Promise.all(
