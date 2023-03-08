@@ -17,9 +17,14 @@ function MovieList() {
 	}, []);
 
 	return (
-		<main>
-			<h1>MovieList</h1>
-			<button onClick={() => history.push("/form")}>Add Movie</button>
+		<main className="main">
+			<h1 className="main__title">MovieList</h1>
+			<button
+				className="main__add-btn"
+				onClick={() => history.push("/form")}
+			>
+				Add Movie
+			</button>
 			<section className="movies">
 				{movies.map((movie) => {
 					return <MovieItem key={movie.id} movie={movie} />;

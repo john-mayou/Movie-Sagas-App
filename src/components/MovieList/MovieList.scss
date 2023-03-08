@@ -1,4 +1,27 @@
+.main {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4rem;
+
+	&__title {
+		font-size: 5rem;
+	}
+
+	&__add-btn {
+		padding: 1rem 2rem;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: lightgray;
+		}
+	}
+}
+
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 4rem;
 }

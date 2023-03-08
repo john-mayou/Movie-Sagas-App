@@ -10,9 +10,9 @@ function MovieItem({ movie }) {
 	};
 
 	return (
-		<div onClick={() => handleSeeDetails(id)}>
-			<h3>{title}</h3>
-			<img src={poster} alt={title} />
+		<div className="gallery-card" onClick={() => handleSeeDetails(id)}>
+			<img className="gallery-card__image" src={poster} alt={title} />
+			<h3 className="gallery-card__title">{title}</h3>
 		</div>
 	);
 }
