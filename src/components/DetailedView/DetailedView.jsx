@@ -8,7 +8,6 @@ function DetailedView() {
 	const history = useHistory();
 	let { movieId } = useParams(); // from url (string)
 	const movieDetails = useSelector((store) => store.movieDetails); // reducer
-	const { id, title, poster, description, genres } = movieDetails; // deconstructing
 
 	// on load
 	useEffect(() => {
@@ -16,19 +15,32 @@ function DetailedView() {
 	}, []);
 
 	return (
-		<>
-			<h1>ID: {id}</h1>
-			{/* <h1>{JSON.stringify(movieDetails)}</h1> */}
-			<p>{id}</p>
-			<p>{title}</p>
-			<img src={poster} alt={title} />
-			<p>{description}</p>
-			<h5>Genres:</h5>
-			{genres?.map((genre, i) => (
-				<p key={i}>{genre}</p>
-			))}
-			<button onClick={() => history.push("/")}>Back To List</button>
-		</>
+		<div className="page-container">
+			<section className="details">
+				<h2 className="details__title">{movieDetails.title}</h2>
+				<img
+					className="details__image"
+					src={movieDetails.poster}
+					alt={movieDetails.title}
+				/>
+				<p className="details__description">
+					{movieDetails.description}
+				</p>
+				<div className="details__genres-container">
+					{movieDetails.genres?.map((genre, i) => (
+						<p className="details__genre" key={i}>
+							{genre}
+						</p>
+					))}
+				</div>
+			</section>
+			<button
+				className="back-to-gallery-btn"
+				onClick={() => history.push("/")}
+			>
+				Back To List
+			</button>
+		</div>
 	);
 }
 
